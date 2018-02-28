@@ -1,0 +1,408 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{E79B89AF-5D04-453D-A053-7B371E47224B}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ColumbusArmyOrder</RootNamespace>
+    <AssemblyName>ColumbusArmyOrder</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>dpm-action-vest.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Data.AdoDotNetInterop, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=14.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="Microsoft.VisualBasic.PowerPacks.Vs, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.ServiceProcess" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BL\ClassBill.cs" />
+    <Compile Include="BL\ClassBrigade.cs" />
+    <Compile Include="BL\ClassMilitaryPieces.cs" />
+    <Compile Include="BL\ClassOrder.cs" />
+    <Compile Include="BL\ClassQuotation.cs" />
+    <Compile Include="BL\ClassRegiments.cs" />
+    <Compile Include="BL\ClassReports.cs" />
+    <Compile Include="BL\ClassUsers.cs" />
+    <Compile Include="BL\Learn.cs" />
+    <Compile Include="BL\QoutStatistic.cs" />
+    <Compile Include="ColumbusOrderDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ColumbusOrderDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ColumbusOrderDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ColumbusOrderDataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\DataAccessLayer.cs" />
+    <Compile Include="Pl\Frm_Backup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pl\Frm_Backup.Designer.cs">
+      <DependentUpon>Frm_Backup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pl\FRM_BattlionManag.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pl\FRM_BattlionManag.Designer.cs">
+      <DependentUpon>FRM_BattlionManag.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pl\FRM_Bill.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pl\FRM_Bill.Designer.cs">
+      <DependentUpon>FRM_Bill.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pl\FRM_BrigadeManag.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pl\FRM_BrigadeManag.Designer.cs">
+      <DependentUpon>FRM_BrigadeManag.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pl\FRM_BriOrder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pl\FRM_BriOrder.Designer.cs">
+      <DependentUpon>FRM_BriOrder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pl\FRM_BriQuotation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pl\FRM_BriQuotation.Designer.cs">
+      <DependentUpon>FRM_BriQuotation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pl\FRM_ChangePass.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pl\FRM_ChangePass.Designer.cs">
+      <DependentUpon>FRM_ChangePass.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pl\FRM_MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pl\FRM_MainForm.Designer.cs">
+      <DependentUpon>FRM_MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pl\FRM_MilitaryPManagment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pl\FRM_MilitaryPManagment.Designer.cs">
+      <DependentUpon>FRM_MilitaryPManagment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pl\FRM_NewBattalion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pl\FRM_NewBattalion.Designer.cs">
+      <DependentUpon>FRM_NewBattalion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pl\FRM_NewBrigade.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pl\FRM_NewBrigade.Designer.cs">
+      <DependentUpon>FRM_NewBrigade.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pl\FRM_NewMilitaryP.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pl\FRM_NewMilitaryP.Designer.cs">
+      <DependentUpon>FRM_NewMilitaryP.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pl\FRM_NewRegiment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pl\FRM_NewRegiment.Designer.cs">
+      <DependentUpon>FRM_NewRegiment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pl\FRM_NewSaraya.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pl\FRM_NewSaraya.Designer.cs">
+      <DependentUpon>FRM_NewSaraya.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pl\FRM_NewSarayaR.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pl\FRM_NewSarayaR.Designer.cs">
+      <DependentUpon>FRM_NewSarayaR.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pl\FRM_OrderDtetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pl\FRM_OrderDtetails.Designer.cs">
+      <DependentUpon>FRM_OrderDtetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pl\FRM_OrdersSelect.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pl\FRM_OrdersSelect.Designer.cs">
+      <DependentUpon>FRM_OrdersSelect.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pl\FRM_PhoneNumber.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pl\FRM_PhoneNumber.Designer.cs">
+      <DependentUpon>FRM_PhoneNumber.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pl\FRM_ProcessDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pl\FRM_ProcessDetails.Designer.cs">
+      <DependentUpon>FRM_ProcessDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pl\FRM_QuotationSelected.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pl\FRM_QuotationSelected.Designer.cs">
+      <DependentUpon>FRM_QuotationSelected.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pl\FRM_QuotDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pl\FRM_QuotDetails.Designer.cs">
+      <DependentUpon>FRM_QuotDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pl\FRM_RegimentManagment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pl\FRM_RegimentManagment.Designer.cs">
+      <DependentUpon>FRM_RegimentManagment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pl\FRM_Report_Details.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pl\FRM_Report_Details.Designer.cs">
+      <DependentUpon>FRM_Report_Details.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pl\FRM_SararyaManagR.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pl\FRM_SararyaManagR.Designer.cs">
+      <DependentUpon>FRM_SararyaManagR.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pl\FRM_SarayaManagmentBri.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pl\FRM_SarayaManagmentBri.Designer.cs">
+      <DependentUpon>FRM_SarayaManagmentBri.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pl\FRM_SigIn.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pl\FRM_SigIn.Designer.cs">
+      <DependentUpon>FRM_SigIn.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ReportPrint\Frm_ReportOrder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReportPrint\Frm_ReportOrder.Designer.cs">
+      <DependentUpon>Frm_ReportOrder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ReportPrint\Frm_ReportPrint.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReportPrint\Frm_ReportPrint.Designer.cs">
+      <DependentUpon>Frm_ReportPrint.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Pl\Frm_Backup.resx">
+      <DependentUpon>Frm_Backup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pl\FRM_BattlionManag.resx">
+      <DependentUpon>FRM_BattlionManag.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pl\FRM_Bill.resx">
+      <DependentUpon>FRM_Bill.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pl\FRM_BrigadeManag.resx">
+      <DependentUpon>FRM_BrigadeManag.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pl\FRM_BriOrder.resx">
+      <DependentUpon>FRM_BriOrder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pl\FRM_BriQuotation.resx">
+      <DependentUpon>FRM_BriQuotation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pl\FRM_ChangePass.resx">
+      <DependentUpon>FRM_ChangePass.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pl\FRM_MainForm.resx">
+      <DependentUpon>FRM_MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pl\FRM_MilitaryPManagment.resx">
+      <DependentUpon>FRM_MilitaryPManagment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pl\FRM_NewBattalion.resx">
+      <DependentUpon>FRM_NewBattalion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pl\FRM_NewBrigade.resx">
+      <DependentUpon>FRM_NewBrigade.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pl\FRM_NewMilitaryP.resx">
+      <DependentUpon>FRM_NewMilitaryP.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pl\FRM_NewRegiment.resx">
+      <DependentUpon>FRM_NewRegiment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pl\FRM_NewSaraya.resx">
+      <DependentUpon>FRM_NewSaraya.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pl\FRM_NewSarayaR.resx">
+      <DependentUpon>FRM_NewSarayaR.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pl\FRM_OrderDtetails.resx">
+      <DependentUpon>FRM_OrderDtetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pl\FRM_OrdersSelect.resx">
+      <DependentUpon>FRM_OrdersSelect.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pl\FRM_PhoneNumber.resx">
+      <DependentUpon>FRM_PhoneNumber.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pl\FRM_ProcessDetails.resx">
+      <DependentUpon>FRM_ProcessDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pl\FRM_QuotationSelected.resx">
+      <DependentUpon>FRM_QuotationSelected.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pl\FRM_QuotDetails.resx">
+      <DependentUpon>FRM_QuotDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pl\FRM_RegimentManagment.resx">
+      <DependentUpon>FRM_RegimentManagment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pl\FRM_Report_Details.resx">
+      <DependentUpon>FRM_Report_Details.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pl\FRM_SararyaManagR.resx">
+      <DependentUpon>FRM_SararyaManagR.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pl\FRM_SarayaManagmentBri.resx">
+      <DependentUpon>FRM_SarayaManagmentBri.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pl\FRM_SigIn.resx">
+      <DependentUpon>FRM_SigIn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="ReportPrint\Frm_ReportOrder.resx">
+      <DependentUpon>Frm_ReportOrder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportPrint\Frm_ReportPrint.resx">
+      <DependentUpon>Frm_ReportPrint.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportPrint\Report1.rdlc" />
+    <EmbeddedResource Include="ReportPrint\Report2.rdlc" />
+    <None Include="app.config" />
+    <None Include="ColumbusOrderDataSet.xsc">
+      <DependentUpon>ColumbusOrderDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="ColumbusOrderDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ColumbusOrderDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ColumbusOrderDataSet.xss">
+      <DependentUpon>ColumbusOrderDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="ColumbusOrderDataSet1.xsc">
+      <DependentUpon>ColumbusOrderDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="ColumbusOrderDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ColumbusOrderDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ColumbusOrderDataSet1.xss">
+      <DependentUpon>ColumbusOrderDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="1.ico" />
+    <Content Include="dpm-action-vest.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\IMG_8457edit.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\photo for wall.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
